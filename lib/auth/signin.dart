@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:foodnepal/auth/firebase_auth.dart';
-import 'package:foodnepal/widgets/home.dart';
+import 'package:foodnepal/Homepage/home.dart';
 
 class SignIn extends StatefulWidget {
   @override
