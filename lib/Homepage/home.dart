@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:foodnepal/Homepage/draweritem.dart';
 import 'package:foodnepal/Homepage/singleitem.dart';
+import 'package:foodnepal/design/colors.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,27 +21,25 @@ class HomePage extends StatelessWidget {
           actions: [
             CircleAvatar(
               radius: 15,
-              backgroundColor: Colors.pink.shade200,
               child: Icon(
                 Icons.search,
                 size: 20,
-                color: Colors.black,
+                color: iconColor,
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: CircleAvatar(
                 radius: 15,
-                backgroundColor: Colors.pink.shade200,
                 child: Icon(
                   Icons.shop,
                   size: 20,
-                  color: Colors.black,
+                  color: iconColor,
                 ),
               ),
             ),
           ],
-          backgroundColor: Colors.pink,
+          backgroundColor: primaryColor,
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -64,7 +68,6 @@ class HomePage extends StatelessWidget {
                       Text(
                         "Flat 10% discount",
                         style: TextStyle(
-                            color: Colors.yellow,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             shadows: [
@@ -79,13 +82,13 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               trendingItem(),
-              dailyItem(),
+              dailyItem(context),
             ],
           ),
         ));
   }
 
-  Column dailyItem() {
+  Column dailyItem(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -114,25 +117,29 @@ class HomePage extends StatelessWidget {
             child: Row(
               children: [
                 SingleProduct(
+                  // onTap: () {
+                  //   Navigator.of(context).push(
+                  //       MaterialPageRoute(builder: (_) => ProductOverview()));
+                  // },
                   productImage:
-                      'https://greatdeals99.com/wp-content/uploads/2020/08/HILIFE-OATS-1-KG-greatdeals99.jpg',
-                  productName: 'Highlife Oats',
-                  productRate: "Rs.275",
-                  productDis: "50% off",
+                      'https://static.sscontent.com/prodimg/thumb/500/500/products/124/v725637_prozis_peanut-butter-500-g_crunchy_newin_flavor.jpg',
+                  productName: 'Peanuts Butter',
+                  productRate: "Rs.450",
+                  productDis: "10% off",
                 ),
                 SingleProduct(
                   productImage:
-                      'https://greatdeals99.com/wp-content/uploads/2020/08/HILIFE-OATS-1-KG-greatdeals99.jpg',
-                  productName: 'Highlife Oats',
-                  productRate: "Rs.275",
-                  productDis: "50% off",
+                      'https://www.himalmart.com/public/upload/product/extra/amul-dark-chocolate-40g-5ffc0b43927d7.jpg',
+                  productName: 'Amul Dark Chocolate',
+                  productRate: "Rs.80",
+                  productDis: "1% off",
                 ),
                 SingleProduct(
                   productImage:
-                      'https://greatdeals99.com/wp-content/uploads/2020/08/HILIFE-OATS-1-KG-greatdeals99.jpg',
-                  productName: 'Highlife Oats',
-                  productRate: "Rs.275",
-                  productDis: "50% off",
+                      'https://shopwholly.com/wp-content/uploads/2020/11/puff-1.jpg',
+                  productName: 'Khajurico Puff',
+                  productRate: "Rs.55",
+                  productDis: "1% off",
                 ),
               ],
             ),
@@ -158,7 +165,7 @@ class HomePage extends StatelessWidget {
               Text(
                 "View all",
                 style: TextStyle(
-                  color: Colors.grey[600],
+                  color: viewAll,
                 ),
               ),
             ],
@@ -175,19 +182,19 @@ class HomePage extends StatelessWidget {
                         'https://greatdeals99.com/wp-content/uploads/2020/08/HILIFE-OATS-1-KG-greatdeals99.jpg',
                     productName: 'Highlife Oats',
                     productRate: "Rs.275",
-                    productDis: "50% off"),
+                    productDis: "10% off"),
                 SingleProduct(
                     productImage:
                         'https://v3.infi.store/wp-content/uploads/2021/01/HILIFEFN-128.jpg',
                     productName: 'Chia Seeds',
                     productRate: "Rs.295",
-                    productDis: "40% off"),
+                    productDis: "5% off"),
                 SingleProduct(
                     productImage:
                         'https://ml1pmsm7fdxx.i.optimole.com/LHWGtwY-9M1K5e8_/w:auto/h:auto/q:auto/https://hilifefoods.com.np/wp-content/uploads/2020/09/Corn-flakes-1.jpg',
                     productName: 'Corn Flakes',
                     productRate: "Rs.300",
-                    productDis: "30% off"),
+                    productDis: "2% off"),
               ],
             ),
           ),

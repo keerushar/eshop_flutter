@@ -35,7 +35,7 @@ class _SignInState extends State<SignIn> {
                     height: 30,
                   ),
                   Text(
-                    "Welcome to Food App",
+                    "Shiva Stores",
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
